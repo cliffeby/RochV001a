@@ -313,7 +313,7 @@ Using <u>rules</u> in Auth0, users are granted                    <u>scopes</u> 
                 <p>
                     <strong> </strong>
                 </p>
-                <p>
+                <p><br></br>
                     <strong>b. </strong>
                     <strong>Is response timely</strong>
                 </p>
