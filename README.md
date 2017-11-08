@@ -80,6 +80,7 @@ There are many articles and opinions on the proper use of express-server middlew
 2. Similarly, an invalid id (Mongoose defined as not equal to a 16-character hex string) will crash the node server.  Error checking could be on the server or client, but since the id string is not a user input, I chose not to check for a valid hex value.
 
 ### _Principles for endpoint testing_
+
 #### Testing - Authorization #
 - Test for each JWT scope condition. e.g. does absence of read:score produce &quot;Insufficient Scope&quot;
 - Confirm messages JWT Malformed, No Authorization Token, and Insufficient Scope are produced
@@ -92,6 +93,7 @@ Comment: None was used for early development.  A Test and Dev server were config
 - Is the response time within acceptable limits
 - Is the status code correct- 200, 400,…
 - Is the response message correct
+
 #### Testing actions #
 **POST**
 - Does the response body contain all of the requested and expected properties
@@ -111,7 +113,7 @@ Comment: None was used for early development.  A Test and Dev server were config
 
 - Create a compliance grid for your expected workflow and each endpoint
 
-#### Compliance matrix framework #
+#### My Compliance matrix #
 <table >
     <tbody>
         <thead style= "font-size:18px background:black color:white">
