@@ -99,13 +99,17 @@ Comment: None was used for early development.  A Test and Dev server were config
 - Does the response body contain all of the requested and expected properties
 - Does the response body schema match the expected schema
 - Does a selected property response equal the request
+
 **PUT**
 - Is the object ID found
 - Does the selected property request get updated
+
 **GET - all**
 - Is the response body an array
+
 **GET - one**
 - Is the object ID found
+
 **DELETE**
 - Is the object ID found
 
