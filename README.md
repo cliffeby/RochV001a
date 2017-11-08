@@ -33,7 +33,7 @@ The following is a guide for the above context.  It contains principles and a fr
 6. POSTMAN for test development and a test runner
 7. Newman for command line testing
 
-### _Principles for endpoint design and testing_
+### _Principles for endpoint design_
 
 #### Design - General and Error reporting
  some **This is Red Bold.** text</span>
@@ -79,50 +79,39 @@ There are many articles and opinions on the proper use of express-server middlew
 
 2. Similarly, an invalid id (Mongoose defined as not equal to a 16-character hex string) will crash the node server.  Error checking could be on the server or client, but since the id string is not a user input, I chose not to check for a valid hex value.
 
+### _Principles for endpoint testing_
 #### Testing - Authorization #
-
 - Test for each JWT scope condition. e.g. does absence of read:score produce &quot;Insufficient Scope&quot;
 - Confirm messages JWT Malformed, No Authorization Token, and Insufficient Scope are produced
 
 #### Testing – Mock server # 
-None was used for early development.  A Test and Dev server were configured.  Make sure that your tests (both during test script creation and once complete) do not pollute your server data.
+Comment: None was used for early development.  A Test and Dev server were configured.  Make sure that your tests (both during test script creation and once complete) do not pollute your server data.
 
-#### Testing - ALL POST, PUT, GET, and DELETE #
-
+#### Testing - ALL POST, PUT, GET, and DELETE actions #
 - Is request authorized i.e. Does the JWT contain the appropriate scope
 - Is the response time within acceptable limits
 - Is the status code correct- 200, 400,…
 - Is the response message correct
-
+#### Testing actions #
 **POST**
-
 - Does the response body contain all of the requested and expected properties
 - Does the response body schema match the expected schema
 - Does a selected property response equal the request
-
 **PUT**
-
 - Is the object ID found
 - Does the selected property request get updated
-
 **GET - all**
-
 - Is the response body an array
-
 **GET - one**
-
 - Is the object ID found
-
 **DELETE**
-
 - Is the object ID found
 
-### Coverage #
+### Asssuring Test Coverage #
 
-- Create a compliance grid for workflow and each endpoint
+- Create a compliance grid for your expected workflow and each endpoint
 
 #### Compliance matrix framework #
-
 <table >
     <tbody>
         <thead style= "font-size:18px background:black color:white">
@@ -625,7 +614,7 @@ In general, POSTMAN is giving me all I need.  I like that it&#39;s easy to break
 
 The following describes my testing approach using POSTMAN and Newman:
 
-My test scripts make use of _postman. {{variables}}_ to allow for test runner iteration by role.  These data are stored in POSTMAN&#39;s Environments (roch1) that are easily manipulated.
+My test scripts make use of _postman variables_ (desinated by double braces) to allow for test runner iteration by role.  These data are stored in POSTMAN&#39;s Environments (roch1) that are easily manipulated.
 
 To get JWT access\_ and id\_ tokens, Auth0 requires the Headers Keys/Values shown below with Content-Type keys set to _application/x-www-form-urlencoded_.
 
