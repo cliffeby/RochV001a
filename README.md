@@ -6,7 +6,7 @@ This GitHub page is the first of several planned blogs on my efforts to get beyo
  
  Cliff Eby - 2017
  
- <span style="color:red">some **This is Red Bold.** text</span>
+ <span style="background-color:yellow">some **This is Red Bold.** text</span>
 
 ### _Introduction_
 
