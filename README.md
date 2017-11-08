@@ -5,6 +5,8 @@ I am a retired civil engineer studying the MEAN stack as an avocation.  I've fou
 This GitHub page is the first of several planned blogs on my efforts to get beyond HW.  I expect that the document will be updated as I learn more about the MEAN Stack.
  
  Cliff Eby - 2017
+ 
+ <span style="color:red">some **This is Red Bold.** text</span>
 
 ### _Introduction_
 
@@ -628,18 +630,14 @@ My test scripts make use of _postman. {{variables}}_ to allow for test runner it
 
 To get JWT access\_ and id\_ tokens, Auth0 requires the Headers Keys/Values shown below with Content-Type keys set to _application/x-www-form-urlencoded_.
 
-![loginbody](https://user-images.githubusercontent.com/1431998/32456425-88d48afa-c2f3-11e7-96ac-7a81dff03fad.png)
-
-
-
 ![loginbody](https://user-images.githubusercontent.com/1431998/32575246-79a6f4c8-c4a1-11e7-8ab3-687e2fd7e815.png)
-
 
 Prior to the POST, many environmental variables are set and are used by subsequent tests in the collection.
 
 ![loginpretest](https://user-images.githubusercontent.com/1431998/32575239-792c0f1a-c4a1-11e7-9b49-c7e0c6c5ed0c.jpg)
 
 Since this is a POST to Auth0, the only test is to assure that it is successful.  Then, JWT access\_ and id\_ tokens are stored in the postman.setGlobalVariable collection.  I chose global variable because these tokens are unreadable and long. It keeps the Environment section readable.
+
 ![logintest](https://user-images.githubusercontent.com/1431998/32575240-793af0fc-c4a1-11e7-9bea-97d50456b9cc.jpg)
 
 POSTMAN now has a JWT access\_token that allows API access.  Setting Authorization in the Header to **Bearer** followed by the _access token_, then setting the audience to a _unique string_ defined in Auth0 and changing the Content-type to _application/json_, is all that is needed.  Not shown is that this access\_token includes a scope of create:score that matches the server&#39;s express router requirement.
