@@ -45,21 +45,21 @@ The following is a guide for the above context.  It contains principles and a fr
   - 500 – Server Error
     - Localhost refused to connect - ERR\_CONNECTION\_REFUSED
 
-_WHY:There are over 70 HTTP status codes. If you use status codes that are not common, you will force developers to search for your intent._
+    <span style="background-color:yellow">_WHY:There are over 70 HTTP status codes. If you use status codes that are not common, you will force developers to search for your intent._</span>
 
-- API responses should contain specific messages.  _WHY: It&#39;s helpful to know the requested endpoint and result.  There are three ways to send this data:_
+3. API responses should contain specific messages.  <span style="background-color:yellow">_WHY: It&#39;s helpful to know the requested endpoint and result.  There are three ways to send this data:_</span>
   - _Express middleware – e.g: &#39;app.use(function(req, res) {res.status(404).send({url: req.originalUrl + &#39; not found&#39;})});_
   - _Express endpoint:  A res property can return any desired server data - e.g. res.send(500, {status:500, message: &#39;internal error&#39;, type:&#39;internal&#39;});_
-  - _Console.log:  Log to server terminal window.  **I used this approach so I can easily remove logging from my production server.  Unlike a public API, there is no need for front end users to get these server messages.**_
-- Modify the 200 – OK response from an endpoint or endpoint/ID not found.  _WHY: Misspelled endpoints and wrong IDs are common errors during development.  Make sure they are caught early.  See middleware below._
-- Do not &quot;document&quot; expected error codes and messages in a separate document – e.g. Postman, Swagger,…  _WHY: While often a simple click to create, that document is just another maintenance requirement and is never at your fingertips.  Instead, make sure your server response and testing tool provide the needed info._
-- Unit test for known responses.  _WHY: Make sure that your server response catches all conditions._
+  - _Console.log:  Log your meassage to a server terminal window.  **I used this approach so I can easily remove logging from my production server.  Unlike a public API, there is no need for front end users to get these server messages.**_
+4. Modify the 200 – OK response from an endpoint or endpoint/ID not found.  <span style="background-color:yellow">_WHY: Misspelled endpoints and wrong IDs are common errors during development.  Make sure they are caught early.  See middleware below._</span>
+5. Do not &quot;document&quot; expected error codes and messages in a separate document – e.g. Postman, Swagger,…  <span style="background-color:yellow">_WHY: While often a simple click to create, that document is just another maintenance requirement and is never at your fingertips.  Instead, make sure your server response and testing tool provide the needed info._</span>
+6. Unit test for known responses. <span style="background-color:yellow"> _WHY: Make sure that your server response catches all conditions._</span>
 
 #### Design – Middleware #
 
-There are many articles and opinions on the proper use of express-server middleware for catching and reporting errors.  With two exceptions, I struggle to see the benefit of detailed status codes and unique messages.  The exceptions are:
+There are many articles and opinions on the proper use of express-server middleware for catching and reporting errors.  With two exceptions, I struggle to see the benefit of detailed status codes and unique messages for my context.  The exceptions are:
 
-- a &quot;404 – Not Found&quot;  app.get(&#39;\*&#39;, func…) fall through is provided by the express-generator for unspecified endpoints and paths.  However, when the path is valid and the id for a GET, PUT, or DELETE is not found, the default express server will return a null body and a 200 status code.  I use the following code to report a 404.
+1. a &quot;404 – Not Found&quot;  app.get(&#39;\*&#39;, func…) fall through is provided by the express-generator for unspecified endpoints and paths.  However, when the path is valid and the id for a GET, PUT, or DELETE is not found, the default express server will return a null body and a 200 status code.  I use the following code to report a 404.
 
 `Score.findById(req.params.id)`
 
@@ -77,7 +77,7 @@ There are many articles and opinions on the proper use of express-server middlew
       res.json(score);
     }});`
 
-- Similarly, an invalid id (Mongoose defined as not equal to a 16-character hex string) will crash the node server.  Error checking could be on the server or client, but since the id string is not a user input, I chose not to check for a valid hex value.
+2. Similarly, an invalid id (Mongoose defined as not equal to a 16-character hex string) will crash the node server.  Error checking could be on the server or client, but since the id string is not a user input, I chose not to check for a valid hex value.
 
 #### Testing - Authorization #
 
