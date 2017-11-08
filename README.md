@@ -36,7 +36,7 @@ The following is a guide for the above context.  It contains principles and a fr
 ### _Principles for endpoint design_
 
 #### Design - General and Error reporting
- some **This is Red Bold.** text</span>
+
 1. Use plural nouns for endpoint.  <span style="background-color:yellow">_WHY: Convention – most developers expect plural endpoints and singular POST, PUT, PATCH, and GET requests are clear with_ _a  /ID appended.  _</span>
 2. API responses should use a limited set of http &quot;status-code&quot; responses.  They are:
   - 200 – OK
