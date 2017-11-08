@@ -630,24 +630,28 @@ To get JWT access\_ and id\_ tokens, Auth0 requires the Headers Keys/Values show
 
 ![loginbody](https://user-images.githubusercontent.com/1431998/32456425-88d48afa-c2f3-11e7-96ac-7a81dff03fad.png)
 
+
+
+![loginbody](https://user-images.githubusercontent.com/1431998/32575246-79a6f4c8-c4a1-11e7-8ab3-687e2fd7e815.png)
+
+
 Prior to the POST, many environmental variables are set and are used by subsequent tests in the collection.
 
- ![](data:image/*)
-
- ![](data:image/*)
+![loginpretest](https://user-images.githubusercontent.com/1431998/32575239-792c0f1a-c4a1-11e7-9b49-c7e0c6c5ed0c.jpg)
 
 Since this is a POST to Auth0, the only test is to assure that it is successful.  Then, JWT access\_ and id\_ tokens are stored in the postman.setGlobalVariable collection.  I chose global variable because these tokens are unreadable and long. It keeps the Environment section readable.
+![logintest](https://user-images.githubusercontent.com/1431998/32575240-793af0fc-c4a1-11e7-9bea-97d50456b9cc.jpg)
 
 POSTMAN now has a JWT access\_token that allows API access.  Setting Authorization in the Header to **Bearer** followed by the _access token_, then setting the audience to a _unique string_ defined in Auth0 and changing the Content-type to _application/json_, is all that is needed.  Not shown is that this access\_token includes a scope of create:score that matches the server&#39;s express router requirement.
 
 `router.route("/scores")`     
 `.post(jwtCheck, jwtAuthz(["create:score"]), scoreController.postScore)`
 
- ![](data:image/*)
+![postheader](https://user-images.githubusercontent.com/1431998/32575243-796de098-c4a1-11e7-9153-d204c2f2f72c.jpg)
 
 Next, the TEST scripts are created.  They are basic JavaScript and I use if/else to test for role conditions.  Like any testing library, the syntax takes some time to master, but I like that it is concise and all in one location.
 
- ![](data:image/*)
+![posttests](https://user-images.githubusercontent.com/1431998/32575245-79988bd6-c4a1-11e7-9773-30c67d699fb2.jpg)
 
 The entire Roch collection test can run in POSTMAN or in Newman.  Using a file named &quot;data&quot; (json or csv), {{variables}} are defined for each iteration.  For example, I change the username and password for each iteration with a pdata.json file:
 
@@ -668,7 +672,9 @@ Exporting all or part of the collection creates a json file that can be used as 
 
 C:\Users\cliff\WebstormProjects\RochV001\ngApp&gt;newman run server/tests/roch1.postman\_collection.json -d server/tests/pdata.json  .  Alternatively, you can run the collection&#39;s iterations in the POSTMAN runner.
 
- ![](data:image/*)
+![newman](https://user-images.githubusercontent.com/1431998/32575242-79531222-c4a1-11e7-801a-7eeee752e555.jpg)
+
+![postrunner](https://user-images.githubusercontent.com/1431998/32575244-798b1f78-c4a1-11e7-9803-a47671d167f1.jpg)
 
 Sources
 
