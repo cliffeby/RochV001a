@@ -480,7 +480,7 @@ Using <u>rules</u> in Auth0, users are granted                    <u>scopes</u> 
                 <p>
                     <strong> </strong>
                 </p>
-                <p><br>
+                <p>
                     <strong>TEST</strong>
                     response time
                 </p>
@@ -598,7 +598,7 @@ Using <u>rules</u> in Auth0, users are granted                    <u>scopes</u> 
                     unauthorized, authorized, and role/scope status codes and
                     messages. <strong></strong>
                 </p>
-                <p><br>
+                <p>
                     <strong>TEST</strong>
                     response time
                 </p>
