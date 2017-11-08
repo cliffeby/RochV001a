@@ -6,7 +6,6 @@ This GitHub page is the first of several planned blogs on my efforts to get beyo
  
  Cliff Eby - 2017
  
- <span style="background-color:yellow">some **This is Red Bold.** text</span>
 
 ### _Introduction_
 
@@ -37,9 +36,9 @@ The following is a guide for the above context.  It contains principles and a fr
 ### _Principles for endpoint design and testing_
 
 #### Design - General and Error reporting
-
-- Use plural nouns for endpoint.  _WHY: Convention – most developers expect plural endpoints and singular POST, PUT, PATCH, and GET requests are clear with_ _a  /ID appended.  _
-- API responses should use a limited set of http &quot;status-code&quot; responses.  They are:
+ some **This is Red Bold.** text</span>
+1. Use plural nouns for endpoint.  <span style="background-color:yellow">_WHY: Convention – most developers expect plural endpoints and singular POST, PUT, PATCH, and GET requests are clear with_ _a  /ID appended.  _</span>
+2. API responses should use a limited set of http &quot;status-code&quot; responses.  They are:
   - 200 – OK
   - 401 – Unauthorized
   - 404 – Not Found
