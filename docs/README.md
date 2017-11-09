@@ -671,6 +671,7 @@ C:\Users\cliff\WebstormProjects\RochV001\ngApp&gt;newman run server/tests/roch1.
 ![postrunner](https://user-images.githubusercontent.com/1431998/32575244-798b1f78-c4a1-11e7-9803-a47671d167f1.jpg)
 
 Sources
+The exported JSON to use with Newman which can be imported back to POSTMAN is in this repo at imports.json. https://github.com/cliffeby/RochV001a/import.json
 
 [https://derickbailey.com/2014/09/06/proper-error-handling-in-expressjs-route-handlers/](https://derickbailey.com/2014/09/06/proper-error-handling-in-expressjs-route-handlers/)
 
