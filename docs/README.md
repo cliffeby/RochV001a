@@ -117,7 +117,7 @@ Comment: None was used for early development.  A Test and Dev server were config
 
 ### Asssuring Test Coverage #
 
-- Create a compliance grid for your expected workflow and each endpoint.  Use it to make sure that your test cover all of these conditions.
+- Create a compliance grid for your expected workflow and each endpoint.  Use it to make sure that your tests cover all of these conditions.
 
 #### My Compliance matrix #
 <table >
