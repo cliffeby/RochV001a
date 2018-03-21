@@ -64,13 +64,13 @@ There are many articles and opinions on the proper use of express-server middlew
 2. Similarly, an invalid id (Mongoose defined as not equal to a 16-character hex string) will crash the node server.  Error checking could be on the server or client, but since the id string is not a user input, I chose not to check for a valid hex value.
 
 
-`Score.findById(req.params.id)`
+`Score.findById(req.params.id)
 
-  `.exec(function(err, score){`
+  .exec(function(err, score){
   
-  `  if (err) {
-      console.log("Error retrieving score";);`
+    if (err) {
     
+      console.log("Error retrieving score";);
     }
     else {
       if ( !score) {
