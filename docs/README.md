@@ -666,7 +666,7 @@ The entire Roch collection test can run in POSTMAN or in Newman.  Using a file n
 
 Exporting all or part of the collection creates a json file that can be used as a Newman input to run at the command line.
 
-C:\Users\cliff\WebstormProjects\RochV001\ngApp&gt;newman run server/tests/roch2.postman\_collection.json -d server/tests/pdata.json  .  Alternatively, you can run the collection&#39;s iterations in the POSTMAN runner.
+C:\Users\cliff\WebstormProjects\RochV003\ngApp&gt;newman run server/tests/roch2.postman\_collection.json -d server/tests/pdata.json  .  Alternatively, you can run the collection&#39;s iterations in the POSTMAN runner.
 
  ![](data:image/*)
 
